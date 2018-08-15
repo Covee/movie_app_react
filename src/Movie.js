@@ -6,8 +6,8 @@ class Movie extends Component{
 	render(){
 		return(
 			<div>
-				<MoviePoster />
-				<h1>hello movie!</h1>
+				<MoviePoster poster={this.props.poster} />
+				<h1>{this.props.title}</h1>
 			</div>
 		)
 	}
@@ -16,7 +16,7 @@ class Movie extends Component{
 class MoviePoster extends Component{
 	render(){
 		return(
-			<img src='https://image.tmdb.org/t/p/w300_and_h450_bestv2/l1skme2RHSFm1c7ipdlR54mVfEq.jpg'/>
+			<img src={this.props.poster}/>
 		)
 	}
 }
