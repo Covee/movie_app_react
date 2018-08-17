@@ -8,28 +8,10 @@ class App extends Component {
   }
 
   componentDidMount(){
-    setTimeout(() => {
-      this.setState({
-        movies: [
-          {
-            title: "몽정기",
-            poster: "https://image.tmdb.org/t/p/w300_and_h450_bestv2/l1skme2RHSFm1c7ipdlR54mVfEq.jpg"
-          },
-          {
-            title: "올드보이",
-            poster: "https://upload.wikimedia.org/wikipedia/fi/e/ea/Oldboy_movie.jpg"
-          },
-          {
-            title: "앤트맨",
-            poster: "https://t1.daumcdn.net/cfile/tistory/2212E53F55DF37E510"
-          },
-          {
-            title: "해리포터와 마법사의 돌",
-            poster: "https://t1.daumcdn.net/cfile/tistory/121C57444F4E14AB11"
-          },
-        ]
-      })
-    }, 3000)
+    fetch('https://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=430156241533f1d058c603178cc3ca0e&targetDt=20180815')
+    .then(response => response.json())
+    .then(json => console.log(json))
+    .catch(err => console.log(err))
   }
 
   _renderMovies = () => {
