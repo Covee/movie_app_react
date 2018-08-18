@@ -2,11 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Movie.css';
 
-function Movie({title, poster}){
+function Movie({title, poster, seen}){
 	return(
 		<div>
 			<MoviePoster poster={poster} />
-			<h1>{title}</h1>
+			<h1>{poster}위: {title}</h1>
+			<h3>누적관객수: {seen}</h3>
 		</div>
 	)
 }
